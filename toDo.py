@@ -22,15 +22,16 @@ def main():
         contador = 1
 
     while confirmacion != 's':
-        seleccion = input('Ingresa la opción a realizar: \n')
+        seleccion = input('Ingresa la opción a realizar: ')
 
         if seleccion == '1':
             tarea = input('Ingresa la tarea: ').upper()
             por_hacer.append(tarea)
         elif seleccion == '2':
+            print('\nEstas son tus tareas: ')
             for tarea in por_hacer:
-                eliminar = int(input('¿Que tarea deseas eliminar? (ingresa el nombre)')).upper()
                 print(tarea)
+            eliminar = input('¿Que tarea deseas eliminar? (ingresa el nombre)').upper()
             por_hacer.remove(eliminar)
         elif seleccion == '3':
             print('\nEstas son tus tareas por hacer: \n')
@@ -41,10 +42,12 @@ def main():
                 confirmacion = input('¿Estas seguro de que deseas salir? (s/n)').lower()
                 if confirmacion == 's':
                     print('Ten un buen dia!')
+                    break
             else:
-                print('Ten un buen dia!') 
+                print('Ten un buen dia!')
+                break 
         else: 
-            print('La opcion que ingresaste no exisre')
+            print('La opcion que ingresaste no existe')
             
 if __name__ == '__main__':
     main()
