@@ -22,15 +22,15 @@ def main():
         contador = 1
 
     while confirmacion != 's':
-        seleccion = input('Ingresa la opción a realizar: ')
+        seleccion = input('Ingresa la opción a realizar: \n')
 
         if seleccion == '1':
             tarea = input('Ingresa la tarea: ').upper()
             por_hacer.append(tarea)
         elif seleccion == '2':
             for tarea in por_hacer:
+                eliminar = int(input('¿Que tarea deseas eliminar? (ingresa el nombre)')).upper()
                 print(tarea)
-            eliminar = int(input('¿Que tarea deseas eliminar? (ingresa el nombre)')).upper()
             por_hacer.remove(eliminar)
         elif seleccion == '3':
             print('\nEstas son tus tareas por hacer: \n')
